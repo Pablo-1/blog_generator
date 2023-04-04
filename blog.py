@@ -13,6 +13,6 @@ textbox.pack(padx=40)
 
 
 gen_button = tk.Button(root, text="Generate", font=('Arial', 15))
-gen_button.pack(pady=20)
+gen_button.pack(pady=20, padx=20)
 
 root.mainloop()
