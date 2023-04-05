@@ -17,13 +17,15 @@ title_box_lab.pack(pady=10)
 textbox = tk.Text(root, font=('Arial', 15), height=2)
 textbox.pack(padx=20)
 
-
+# generate blog button
 gen_button = tk.Button(root, text="Generate", font=('Arial', 15))
 gen_button.pack(pady=10)
 
+# blog box label
 blogpost_lab = tk.Label(root, text="Your blogpost below.", font=('Arial', 15))
 blogpost_lab.pack(pady=10)
 
+# blogpost box
 blogpost_box = tk.Text(root, font=('Arial', 20), height=10)
 blogpost_box.pack(padx=20)
 
