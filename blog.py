@@ -1,7 +1,7 @@
 import openai
 import tkinter as tk
 
-# secret key in the brackets, generate the key on open.ai website
+# Generate the secret_key on openai website
 openai.api_key = "secret_key"
 
 # Create the main window
@@ -19,7 +19,7 @@ textbox.pack(padx=20)
 
 # Generate blog button
 def generate_blogpost():
-    # Get the subject from the textbox
+    # Get the subject from the textbox from first character to last -1 which is new line character 
     subject = textbox.get("1.0", "end-1c")
 
     # if subject box has been left empty
@@ -28,14 +28,21 @@ def generate_blogpost():
         blogpost_box.insert("1.0", "Please enter a subject for your blog post.")
         return
 
-    # Generate the blog post with ChatGPT API
+    # Generating the blogpost with ChatGPT API
     response = openai.Completion.create(
+        # GPT engine 
         engine="text-davinci-002",
+        # Prompt to generate the blogpost
         prompt=f"Write a blog post on {subject}.",
+        # Argument on the scale of 0.0 to 1.0, controls creativity and risktaking 
         temperature=0.5,
+        #Number of tokens
         max_tokens=1024,
+        # Number of responses to generate
         n=1,
+        # Argument stops generating response if the condition is met, set to None
         stop=None,
+        # Number of seconds for response to be generated before its terminated
         timeout=10,
     )
 
