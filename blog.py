@@ -32,7 +32,7 @@ def generate_blogpost():
     response = openai.Completion.create(
         # GPT engine 
         engine="text-davinci-002",
-        # Prompt to generate the blogpost
+        # Prompt to generate the blog post
         prompt=f"Write a blog post on {subject}.",
         # Argument on the scale of 0.0 to 1.0, controls creativity and risktaking 
         temperature=0.5,
@@ -57,7 +57,7 @@ gen_button = tk.Button(root, text="Generate", font=('Arial', 15), command=genera
 gen_button.pack(pady=10)
 
 # Blog box label
-blogpost_lab = tk.Label(root, text="Your blogpost below.", font=('Arial', 15))
+blogpost_lab = tk.Label(root, text="Your blog post below.", font=('Arial', 15))
 blogpost_lab.pack(pady=10)
 
 # Blogpost box
