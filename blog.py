@@ -17,7 +17,7 @@ title_box_lab.pack(pady=10)
 textbox = tk.Text(root, font=('Arial', 15), height=2)
 textbox.pack(padx=20)
 
-# Generate blog button
+# Generate blog function
 def generate_blogpost():
     # Get the subject from the textbox from first character to last -1 which is new line character 
     subject = textbox.get("1.0", "end-1c")
@@ -54,6 +54,7 @@ def generate_blogpost():
     blogpost_box.delete("1.0", "end")
     blogpost_box.insert("1.0", blogpost)
 
+# Generate blog button
 gen_button = tk.Button(root, text="Generate", font=('Arial', 15), command=generate_blogpost)
 gen_button.pack(pady=10)
 
